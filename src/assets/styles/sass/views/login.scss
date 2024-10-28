@@ -1,0 +1,69 @@
+@use "../abstracts/mixins" as mixins;
+.body-login-page {
+    height: 100vh;
+    width: 100%;
+    @include mixins.customFlex(row, center, center);
+    background: url('../../src/assets/images/bg-image.png') lightgray 0px -100px / 100% 118.519% no-repeat;
+    padding: 7.5rem, 22.5rem;
+  }
+  
+  .main-login {
+    width: clamp(40rem, 65rem, 70rem);
+    height: clamp(30rem, 40rem, 50rem);
+    @include mixins.customFlex(row, center, stretch);
+    border-radius: 1.25rem;
+    box-shadow: 0px 0px 4px 0px rgba(0, 67, 101, 0.05);
+    background-color: var(--white);
+    &__login {
+      width: 50%;
+    }
+  }
+  
+  .login {
+    @include mixins.customFlex(column, space-around, center);
+  
+    &__logo {
+      @include mixins.customFlex($alignItem: center, $gap: 1rem);
+      color: var(--primary-500);
+    }
+    &__logo-file {
+      width: 7rem;
+      height: 7rem;
+    }
+    &__title {
+      font: {
+        size: 2.2rem;
+        weight: 700;
+      }
+    }
+    &__subtitle {
+      font: {
+        size: 1rem;
+        weight: 400;
+      }
+    }
+    &__footer {
+      color: var(--black-500);
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+  }
+  
+  .login-form {
+    @include mixins.customFlex(column, start, center, 1rem);
+    width: 70%;
+  
+  }
+  
+  .basic-image {
+    $padding-size: 1rem;
+    padding: $padding-size 0 $padding-size $padding-size;
+    width: 50%;
+    @include mixins.customFlex($alignItem: stretch);
+    &__file {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+  }
